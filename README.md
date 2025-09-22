@@ -1,1 +1,1 @@
-# crud-mundo
+Essa aplicação se chama Crud Mundo, é uma requisição da disciplina de Desenvolvimento WEB e Mobile, ele se baseia em um CRUD, que deve gerenciar um banco de dados que contém cidades e países diretamente relacionados.
