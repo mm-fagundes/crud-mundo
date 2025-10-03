@@ -15,8 +15,4 @@ else{
     echo '<script type="text/javascript"> alert("Conexão bem sucedida.") </script>';
 }
 
-$conn->close();
-
-
-
 ?>

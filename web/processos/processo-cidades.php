@@ -1,0 +1,3 @@
+<? 
+include './pags/connection.php'
+?>
