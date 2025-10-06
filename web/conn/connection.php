@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 else{
-    echo '<script type="text/javascript"> alert("Conexão bem sucedida.") </script>';
+    
 }
 
 ?>

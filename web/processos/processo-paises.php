@@ -13,8 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($stmt = $conn->prepare($sql)) {
         $stmt-> bind_param("sis", $nome, $populacao, $continente);
 
+
+        session_start();
         if ($stmt -> execute()){
-            echo "País cadastrado com sucesso.";
+            $_SESSION['msg'] = "País cadastrado com sucesso."; 
+            header('location: /crud-mundo/web/pags/cadastros/cadastro-paises.php');
             exit;
         }
         else{

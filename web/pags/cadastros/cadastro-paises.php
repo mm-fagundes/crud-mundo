@@ -3,9 +3,19 @@
 </head>
 
 <body>
+    <?php include '../navbar.php'; 
+    session_start();
+    if(isset($_SESSION['msg'])){
+        echo '<script>alert("' . $_SESSION['msg'] .'")</script>';
+        unset($_SESSION['msg']);
+    }
+    
+    
+    
+    ?>
     <div class="pg1">
             <div class="formulario">
-                <form action="../processos/processo-paises.php" method="POST">
+                <form action="../../processos/processo-paises.php" method="POST">
                     <div class="box">
                         <h1>Cadastrar Países</h1>
                     </div>

@@ -12,17 +12,17 @@
     
     <nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Crud Mundo</a>
+  <a class="navbar-brand" href="/crud-mundo/web/pags/index.php">Crud Mundo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="./cadastros/cadastro-paises.php">Cadastro Países <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/crud-mundo/web/pags/cadastros/cadastro-paises.php">Cadastro Países <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Cadastro Cidades</a>
+        <a class="nav-link" href="/crud-mundo/web/pags/cadastros/cadastro-cidades.php">Cadastro Cidades</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Gerenciar</a>
