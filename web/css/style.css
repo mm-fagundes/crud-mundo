@@ -11,6 +11,10 @@
     flex-direction: row;
     font-size: 3vh;
     width: 50vh;
+    margin-top: 6vh;
+    border: 1px solid rgb(54, 127, 156);
+    border-radius: 20px;
+    padding: 8vh;
 }
 
 .formulario form{
@@ -40,7 +44,7 @@
 
 .box select{
     height: 6vh;
-    width: 31%;
+    width: 100%;
     border: 1px solid skyblue;
     border-radius: 10px;
     font-size: 1.8vh;
