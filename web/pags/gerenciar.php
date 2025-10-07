@@ -1,0 +1,77 @@
+<?php
+include 'navbar.php';
+include '../conn/connection.php';
+?>
+
+
+<div class="pg1">
+    <div class="formulario">
+        <form action="gerenciar.php" method="POST">
+            <div class="box">
+                <h1>Gerenciar País</h1>
+            </div>
+            <div class="box">
+                <input type="text" name="pais" required placeholder="Nome do País">
+            </div>
+            <div class="box"><input type="submit" value="Consultar"></div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<?php
+$escolha = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $escolha = $_POST['pais'];
+}
+
+
+if (!empty($escolha)) {
+
+    $stmt = $conn->prepare("select id, nome, populacao from paises where nome like ?");
+    $termo_busca = '%' . $escolha . '%';
+    $stmt->bind_param("s", $termo_busca);
+    $stmt->execute();
+    $busca = $stmt->get_result();
+    $stmt->close();
+    if ($busca->num_rows > 0) {
+        while ($linha = $busca->fetch_assoc()) {
+            echo "
+            
+            <h1>ID: $linha[id] </h1>
+            <h1>Nome: $linha[nome] </h1>
+            <h1>População: $linha[populacao] </h1>
+            
+            
+            "
+
+
+
+
+
+            ;
+        }
+    } else {
+        echo "Nenhum resultado encontrado.";
+    }
+
+
+
+
+
+
+}
+
+$sql = "select * from paises where nome like '%" . $escolha . "%'";
+$busca = $conn->query($sql);
+
+
+
+
+
+
+
+?>
