@@ -40,12 +40,32 @@ if (!empty($escolha)) {
     if ($busca->num_rows > 0) {
         while ($linha = $busca->fetch_assoc()) {
             echo "
-            
-            <h1>ID: $linha[id] </h1>
-            <h1>Nome: $linha[nome] </h1>
-            <h1>População: $linha[populacao] </h1>
-            
-            
+            <div class='consulta'>
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>Nome</td>
+                        <td>População</td>
+                    </tr>
+                    <tr>
+                    
+                    <td class='id'>
+                            {$linha['id']}
+                    </td>
+
+                    <td class='nome'>
+                            {$linha['nome']}
+                    </td>
+                    <td class='populacao'>
+                            {$linha['populacao']}
+                    </td>
+                    
+                    </tr>
+
+
+
+                </table>
+            </div>
             "
 
 
