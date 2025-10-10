@@ -108,3 +108,11 @@ input[type="number"]::-webkit-inner-spin-button {
 .populacao{
   width: 30vh;
 }
+
+.delete{
+  width: 15vh;
+}
+
+.edit{
+  width: 15vh;
+}

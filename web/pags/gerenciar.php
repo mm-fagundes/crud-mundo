@@ -37,43 +37,44 @@ if (!empty($escolha)) {
     $stmt->execute();
     $busca = $stmt->get_result();
     $stmt->close();
+
+
     if ($busca->num_rows > 0) {
+        echo "
+        <div class='consulta'> 
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>População</td> 
+                <td class='edit'>Editar</td>
+                <td class='delete'>Deletar</td>
+            </tr>
+        ";
         while ($linha = $busca->fetch_assoc()) {
-            echo "
-            <div class='consulta'>
-                <table>
-                    <tr>
-                        <td>ID</td>
-                        <td>Nome</td>
-                        <td>População</td>
-                    </tr>
-                    <tr>
-                    
+            echo "    
+                <tr>
                     <td class='id'>
                             {$linha['id']}
                     </td>
-
                     <td class='nome'>
                             {$linha['nome']}
                     </td>
                     <td class='populacao'>
                             {$linha['populacao']}
-                    </td>
+                    </td>    
+                    <td class=''>
                     
-                    </tr>
-
-
-
-                </table>
-            </div>
-            "
-
-
-
-
-
-            ;
+                    </td>
+                    <td class=''>
+                    
+                    </td>
+                </tr>
+            ";
         }
+
+
+        echo "</table> </div>";
     } else {
         echo "Nenhum resultado encontrado.";
     }
