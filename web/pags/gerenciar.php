@@ -1,6 +1,7 @@
 <?php
 include 'navbar.php';
 include '../conn/connection.php';
+include 'links.php';
 ?>
 
 
@@ -64,10 +65,10 @@ if (!empty($escolha)) {
                             {$linha['populacao']}
                     </td>    
                     <td class=''>
-                    
+                            <a href='editar.php'>Editar</a>
                     </td>
                     <td class=''>
-                    
+                            <a href='deletar.php'>Deletar</a>
                     </td>
                 </tr>
             ";
