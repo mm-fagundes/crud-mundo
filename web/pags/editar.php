@@ -15,9 +15,11 @@ include ('navbar.php');
 include ('links.php');
 ?>
 
+
+
 <div class="pg1">
     <div class="formulario" id="pesquisa">
-        <form action="">
+        <form action="" method="POST">
             <div class="box">
                 <h1>Pesquisar Cidade</h1>
             </div>
@@ -30,6 +32,9 @@ include ('links.php');
             </div>
         </form>
     </div>
+    <?php if(!empty($mensagem)): ?>
+        <div class="mensagem"><?php echo $mensagem; ?></div>
+    <?php endif; ?>
 </div>
 
 
