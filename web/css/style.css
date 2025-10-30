@@ -116,3 +116,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .edit{
   width: 15vh;
 }
+
+#pesquisa{
+  padding-bottom: 1.5vw;
+  padding-top: 1.5vw;
+}
