@@ -32,7 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if (!empty($escolha)) {
 
-    $stmt = $conn->prepare("select id, nome, populacao from paises where nome like ?");
+    $stmt = $conn->prepare("
+    SELECT 
+        c.id,
+        c.nome,
+        c.populacao,
+        p.nome AS pais
+    FROM cidades c
+    JOIN paises p ON c.pais = p.id
+    WHERE c.nome LIKE ?
+");
+
     $termo_busca = '%' . $escolha . '%';
     $stmt->bind_param("s", $termo_busca);
     $stmt->execute();
@@ -48,6 +58,8 @@ if (!empty($escolha)) {
                 <td>ID</td>
                 <td>Nome</td>
                 <td>População</td> 
+                <td>País</td>
+                
                 <td class='edit'>Editar</td>
                 <td class='delete'>Deletar</td>
             </tr>
@@ -63,9 +75,20 @@ if (!empty($escolha)) {
                     </td>
                     <td class='populacao'>
                             {$linha['populacao']}
-                    </td>    
+                    </td>  
                     <td class=''>
-                            <a href='editar.php'>Editar</a>
+                            {$linha['pais']}
+                    </td>  
+                    <td class='editar'>
+                            <form action='editar.php' method='post' style='display:inline;'>
+                                <input type='hidden' name='id' value='{$linha['id']}'>
+                                <input type='hidden' name='nome' value='{$linha['nome']}'>
+                                <input type='hidden' name='populacao' value='{$linha['populacao']}'>
+                                <input type='hidden' name='pais' value='{$linha['pais']}'>
+                                <input type='submit' value='Editar'>
+                            </form>
+
+
                     </td>
                     <td class=''>
                             <a href='deletar.php'>Deletar</a>

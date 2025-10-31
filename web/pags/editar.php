@@ -10,32 +10,22 @@
 </body>
 </html>
 <?php
-include ('../conn/connection.php');
-include ('navbar.php');
-include ('links.php');
+    include ('../conn/connection.php');
+    include ('navbar.php');
+    include ('links.php');
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $id = ($_POST['id']);
+        $nome = ($_POST['nome']);
+        $populacao = ($_POST['populacao']);
+        $pais = ($_POST['pais']);   
+    
+    }
+    $sql = "SELECT id, nome FROM paises ORDER BY nome ASC";
+    $resultado = $conn->query($sql);
 ?>
 
 
-
-<div class="pg1">
-    <div class="formulario" id="pesquisa">
-        <form action="" method="POST">
-            <div class="box">
-                <h1>Pesquisar Cidade</h1>
-            </div>
-            <div class="box">
-                
-                <input type="text" name="name" placeholder="Nome da Cidade">
-            </div>
-            <div class="box">
-                <input type="submit" value="Buscar">
-            </div>
-        </form>
-    </div>
-    <?php if(!empty($mensagem)): ?>
-        <div class="mensagem"><?php echo $mensagem; ?></div>
-    <?php endif; ?>
-</div>
 
 
 <div class="pg1">
@@ -45,23 +35,23 @@ include ('links.php');
                 <h1>Editar Cidades</h1>
             </div>
             <div class="box">
-                <input type="text" name="nome" id="nome" placeholder="Nome da Cidade" required disabled>
+                <input type="text" name="nome" id="nome" placeholder="Nome da Cidade" value="<?php echo"$nome"?>" required >
             </div>    
                 
             <div class="box">
-                <input type="number" name="populacao" id="populacao" placeholder="População da Cidade"  required disabled>
+                <input type="number" name="populacao" id="populacao" placeholder="População da Cidade" value="<?php echo"$populacao"?>" required >
             </div>
     
             <div class="box">
-                <select id="pais" name="pais" required disabled>
-                    <option value="" selected disabled>País</option>
+                <select id="pais" name="pais" required >
+                    <option value="" selected ><?php echo"$pais"?></option>
                     <?php while ($pais = $resultado -> fetch_assoc()): ?>
                         <option value="<?= $pais['id'] ?>"><?= $pais['nome'] ?></option>
                     <?php endwhile; ?>
                 </select>
             </div>
     
-    <div class="box"><input type="submit" value="Cadastrar"></div>
+    <div class="box"><input type="submit" value="Editar"></div>
 </form>
 </div>
 </div>
