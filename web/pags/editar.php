@@ -30,7 +30,7 @@
 
 <div class="pg1">
     <div class="formulario">
-        <form action="../../processos/processo-update-cidades.php" method="post">
+        <form action="../../../crud-mundo\web\processos\update.php" method="post">
             <div class="box">
                 <h1>Editar Cidades</h1>
             </div>
