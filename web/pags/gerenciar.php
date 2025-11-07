@@ -88,7 +88,56 @@ if (!empty($escolha)) {
                                 <input type='submit' value='Editar'>
                             </form>
 
+<div class=".
+.
+.
+.
+.
+.
+.
+.
+.
+.
+..
+.
+..
+..
+.
+.
+.
 
+.
+
+...
+.
+.
+.
+
+
+
+.
+.
+.
+.
+
+..
+.
+.
+.
+.
+.
+..
+.
+.
+.
+.
+.
+.
+.
+.
+
+..
+"></div>
                     </td>
                     <td class=''>
                             <a href='deletar.php'>Deletar</a>
